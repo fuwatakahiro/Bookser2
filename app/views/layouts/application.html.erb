@@ -25,6 +25,10 @@
    </li>
   <% end %>
   </header>
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
+  <%= flash[:success] %>
     <%= yield %>
 <footer>
   <div class="container mt-5">
