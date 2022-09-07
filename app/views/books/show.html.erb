@@ -1,0 +1,38 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <%= render 'books/info' %>
+    <div class="col-md-8 offset-md-1">
+      <h2>Books detail</h2>
+      <table class="table table-hover table-inverse">
+        <thead>
+        <!--  <tr>-->
+        <!--    <th></th>-->
+        <!--    <th>Title</th>-->
+        <!--    <th>Opinion</th>-->
+            <th colspan="3"></th>
+          <!--</tr>-->
+        </thead>
+        <tbody>
+          <tr>
+          <th>
+          <%= link_to user_path(@book.user_id) do %>
+            <% if @book.user.profile_image.attached? %>
+              <%= image_tag @book.user.profile_image, size: "100x100" %>
+            <% else %>
+              <%= image_tag "no_image", size: "100x100" %>
+            <% end %>
+            <%= @book.user.name %>
+          <% end %>
+          </th>
+            <th><%= link_to @book.name, book_path(@book.id) %></th>
+            <th><%= @book.body %></th>
+          <% if current_page? %>
+            <th><%= link_to "Edit", edit_book_path(@book.id)%></th>
+            <th><%= link_to "Destory", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %></th>
+          <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
