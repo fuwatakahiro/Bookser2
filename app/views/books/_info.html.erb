@@ -18,9 +18,9 @@
         </tr>
       </tbody>
     </table>
-　
+
     <div class="row">
-      <%= link_to edit_user_registration_path do %>
+      <%= link_to edit_user_path(current_user.id) do %>
         <i class="fas fa-user-cog"></i>
       <% end %>
     </div>
