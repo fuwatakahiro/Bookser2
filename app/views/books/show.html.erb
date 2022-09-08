@@ -26,9 +26,9 @@
           </th>
             <th><%= link_to @book.title, book_path(@book.id) %></th>
             <th><%= @book.body %></th>
-          <% if current_page? %>
+          <% if @book.user == current_user %>
             <th><%= link_to "Edit", edit_book_path(@book.id)%></th>
-            <th><%= link_to "Destory", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %></th>
+            <th><%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %></th>
           <% end %>
           </tr>
         </tbody>
