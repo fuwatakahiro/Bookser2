@@ -32,7 +32,7 @@
                 </li>
                 <li>
                   <%= link_to books_path do %>
-                    <i class="fa-solid fa-book-open"></i>
+                     <i class="fas fa-book-open"></i>
                     Books
                   <% end %>
                 </li>
@@ -74,6 +74,7 @@
       </nav>
     </header>
 <div><%= flash[:notice] %></div>
+<div><%= flash[:successfully] %></div>
     <%= yield %>
   <footer>
     <div class="container mt-5">
